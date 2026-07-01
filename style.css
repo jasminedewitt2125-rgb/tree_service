@@ -1291,3 +1291,29 @@ p {
     display: block;
   }
 }
+@media (max-width: 1020px) {
+  .main-nav.menu-open {
+    background: #071007;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    left: 0;
+    padding: 12px 20px 20px;
+    position: absolute;
+    right: 0;
+    top: 84px;
+  }
+
+  .main-nav.menu-open a {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 16px 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 680px) {
+  .main-nav.menu-open {
+    top: 72px;
+  }
+}
