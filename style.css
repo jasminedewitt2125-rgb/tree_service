@@ -1317,3 +1317,95 @@ p {
     top: 72px;
   }
 }
+/* Service card upgrades */
+
+.service-card {
+  border: 1px solid rgba(21, 47, 22, 0.08);
+  position: relative;
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    border-color 0.28s ease;
+}
+
+.service-card::before {
+  background: var(--bright-green);
+  content: "";
+  height: 4px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+  width: 100%;
+  z-index: 3;
+}
+
+.service-image {
+  overflow: hidden;
+  transition: transform 0.4s ease;
+}
+
+.service-card-content {
+  position: relative;
+}
+
+.service-card-content::after {
+  background: rgba(79, 169, 43, 0.16);
+  bottom: 0;
+  content: "";
+  height: 1px;
+  left: 24px;
+  position: absolute;
+  right: 24px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.service-card a {
+  align-items: center;
+  display: inline-flex;
+  gap: 6px;
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.service-card:hover {
+  border-color: rgba(79, 169, 43, 0.35);
+  box-shadow: 0 20px 42px rgba(16, 39, 17, 0.16);
+  transform: translateY(-8px);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.06);
+}
+
+.service-card:hover .service-card-content::after {
+  transform: scaleX(1);
+}
+
+.service-card:hover a {
+  color: #1c6410;
+  gap: 11px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .service-card::before,
+  .service-image,
+  .service-card-content::after,
+  .service-card a {
+    transition: none;
+  }
+
+  .service-card:hover {
+    transform: none;
+  }
+}
