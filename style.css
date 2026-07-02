@@ -1409,3 +1409,14 @@ p {
     transform: none;
   }
 }
+.service-card:hover {
+  transform: translateY(-12px) scale(1.015);
+}
+
+.service-card:hover .service-card-content {
+  background: #f4faf1;
+}
+
+.service-card:hover h3 {
+  color: #2f8919;
+}
